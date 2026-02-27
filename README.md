@@ -16,8 +16,11 @@ This guide walks through benchmarking the **YOLO11n** (nano) object detection mo
 - Raspberry Pi OS (64-bit) — **important: use 64-bit for best performance**
 - Miniforge/conda installed
 - A conda environment named `yolo_demo`
-- Internet connection (for downloading model + images)
+- Internet connection (for downloading COCO images)
 - Adequate storage (~1GB free for model, images, and dependencies)
+- **A separate machine** (PC, laptop, or Google Colab) for the one-time model export
+
+> **Why export elsewhere?** Recent PyTorch wheels use CPU instructions (e.g. SVE) that the Pi 4's Cortex-A72 doesn't support, causing "Illegal instruction" crashes. We avoid this by exporting the model on a capable machine and only running the lightweight NCNN inference on the Pi.
 
 ---
 
@@ -29,11 +32,10 @@ yolo_benchmark/
 ├── 02_download_coco_sample.py   # Download 100 COCO images
 ├── 03_benchmark.py              # Run the benchmark
 ├── README.md                    # This guide
+├── yolo11n_ncnn_model/          # (copied from export machine) NCNN model
 ├── coco_sample/                 # (created) Downloaded images
 │   ├── manifest.json            # Image metadata for reproducibility
 │   └── *.jpg                    # 100 COCO validation images
-├── yolo11n.pt                   # (created) PyTorch model weights
-├── yolo11n_ncnn_model/          # (created) Exported NCNN model
 └── results/                     # (created) Benchmark outputs
     ├── BENCHMARK_REPORT.md      # Human-readable report
     ├── benchmark_combined.json  # Full combined results
@@ -45,13 +47,30 @@ yolo_benchmark/
 
 ## Step-by-Step Instructions
 
-### Step 1: Activate Your Environment
+### Step 1: Export the Model (on your PC/laptop, NOT the Pi)
+
+The Pi 4's Cortex-A72 can't run recent PyTorch wheels, so we export on a separate machine:
+
+```bash
+pip install ultralytics
+yolo export model=yolo11n.pt format=ncnn
+```
+
+This creates a `yolo11n_ncnn_model/` folder. Copy it to your Pi:
+
+```bash
+scp -r yolo11n_ncnn_model/ pi@<pi-ip>:~/yolo_benchmark/
+```
+
+Alternatively, use [Google Colab](https://colab.research.google.com) if you don't have a suitable local machine.
+
+### Step 2: Activate Your Environment (on the Pi)
 
 ```bash
 conda activate yolo_demo
 ```
 
-### Step 2: Install Dependencies
+### Step 3: Install Dependencies
 
 ```bash
 cd ~/yolo_benchmark
@@ -62,16 +81,15 @@ bash 01_setup.sh
 
 | Package | Purpose |
 |---------|---------|
-| `ultralytics` | YOLO11 framework (includes model download, export, inference) |
+| `ultralytics` | YOLO11 framework (model loading + NCNN inference) |
+| `opencv-python-headless` | Image loading and processing |
+| `ncnn` | NCNN inference runtime for ARM |
 | `psutil` | System monitoring (RAM, CPU temp, CPU usage) |
-| `fiftyone` | COCO dataset access (used for annotations download) |
-| `pycocotools` | COCO annotation parsing |
+| `numpy<2.0` | Pi-compatible NumPy (v2.0+ can cause illegal instruction) |
 
 **Expected time:** 5–15 minutes depending on your internet speed and SD card.
 
-> **Tip:** If you're tight on space, you can skip `fiftyone` (it's large). The download script uses the COCO API directly and only needs `pycocotools`. Edit `01_setup.sh` to remove the fiftyone line if needed.
-
-### Step 3: Download COCO Sample Images
+### Step 4: Download COCO Sample Images
 
 ```bash
 python 02_download_coco_sample.py
@@ -87,7 +105,7 @@ This script:
 
 > **Note:** The full COCO val2017 set is 6GB+. This script avoids that by downloading only the images we need.
 
-### Step 4: Run the Benchmark
+### Step 5: Run the Benchmark
 
 ```bash
 python 03_benchmark.py
@@ -104,7 +122,7 @@ This script:
 
 **Expected time:** 10–30 minutes total (depends on your Pi and cooling).
 
-### Step 5: View Results
+### Step 6: View Results
 
 ```bash
 cat results/BENCHMARK_REPORT.md
@@ -166,9 +184,10 @@ Your results will vary based on cooling, overclock settings, background processe
 - Run `free -h` to check available RAM before starting
 - If still failing at 640, try running only the 320 benchmark by editing `IMAGE_SIZES` in `03_benchmark.py`
 
-### NCNN export fails
-- Ensure you have enough disk space (`df -h`)
-- Try PyTorch inference instead: change `EXPORT_FORMAT = "ncnn"` to use the `.pt` model directly (slower but simpler)
+### NCNN model fails to load
+- Ensure the `yolo11n_ncnn_model/` folder contains the model files (`.bin` and `.param` files)
+- Make sure the model was exported with the same ultralytics version as installed on the Pi
+- If you see "Illegal instruction" even with NCNN, check NumPy: `pip install "numpy<2.0"`
 
 ### Very slow inference
 - Make sure you're on **64-bit** Raspberry Pi OS (`uname -m` should show `aarch64`)
@@ -189,12 +208,14 @@ You can modify `03_benchmark.py` to adjust:
 ```python
 IMAGE_SIZES = [320, 640]    # Add/remove resolutions (e.g., [256, 320, 480, 640])
 WARMUP_RUNS = 5             # Increase for more stable timing
-EXPORT_FORMAT = "ncnn"      # Try "onnx" or "tflite" for comparison
+NCNN_MODEL_DIR = "yolo11n_ncnn_model"  # Path to your pre-exported model
 ```
 
-To benchmark a different model:
-```python
-MODEL_NAME = "yolo11s"      # Small variant (~9.4M params, slower but more accurate)
+To benchmark a different model, export it on your PC first:
+```bash
+# On your PC:
+yolo export model=yolo11s.pt format=ncnn
+# Then scp the folder to the Pi and update NCNN_MODEL_DIR
 ```
 
 ---

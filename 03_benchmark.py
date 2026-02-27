@@ -10,7 +10,7 @@ Measures:
   - CPU temperature (proxy for power/thermal load)
 
 Runs at two resolutions: 320x320 and 640x640
-Exports model to NCNN format for optimal Pi performance.
+Expects a pre-exported NCNN model (exported on a separate machine).
 
 Usage:
     python 03_benchmark.py
@@ -31,8 +31,8 @@ import psutil
 IMAGE_DIR = "coco_sample"
 RESULTS_DIR = "results"
 MODEL_NAME = "yolo11n"
+NCNN_MODEL_DIR = "yolo11n_ncnn_model"   # Pre-exported NCNN model folder
 IMAGE_SIZES = [320, 640]
-EXPORT_FORMAT = "ncnn"      # Most efficient for Raspberry Pi
 WARMUP_RUNS = 5             # Warmup inferences before timing
 
 
@@ -94,17 +94,14 @@ def get_memory_usage():
     }
 
 
-def export_model(model_pt_path, export_format=EXPORT_FORMAT):
-    """Export YOLO model to the specified format."""
+def load_model(model_path):
+    """Load a pre-exported NCNN model via ultralytics."""
     from ultralytics import YOLO
 
-    print(f"\n  Loading {model_pt_path}...")
-    model = YOLO(model_pt_path)
-
-    print(f"  Exporting to {export_format.upper()} format...")
-    export_path = model.export(format=export_format)
-    print(f"  Model exported to: {export_path}")
-    return export_path
+    print(f"  Loading NCNN model from {model_path}...")
+    model = YOLO(model_path, task="detect")
+    print(f"  Model loaded successfully.")
+    return model
 
 
 def run_benchmark(model_path, image_dir, imgsz, warmup=WARMUP_RUNS):
@@ -134,7 +131,7 @@ def run_benchmark(model_path, image_dir, imgsz, warmup=WARMUP_RUNS):
     # Load model
     print(f"  Loading model from {model_path}...")
     mem_before_load = get_memory_usage()
-    model = YOLO(model_path)
+    model = YOLO(model_path, task="detect")
     mem_after_load = get_memory_usage()
 
     model_load_mem_mb = mem_after_load["rss_mb"] - mem_before_load["rss_mb"]
@@ -400,27 +397,36 @@ def main():
           f"{system_info['available_ram_gb']} GB available")
 
     # ── Export Model ───────────────────────────────────────────────────
-    print("\n[2/5] Preparing YOLO11n model...")
-    pt_model = f"{MODEL_NAME}.pt"
+    print("\n[2/5] Checking NCNN model...")
+    ncnn_model_path = NCNN_MODEL_DIR
 
-    # Download the model weights (Ultralytics does this automatically)
-    from ultralytics import YOLO
-    model = YOLO(pt_model)  # downloads if not present
+    if not os.path.isdir(ncnn_model_path):
+        print(f"\n  ERROR: NCNN model folder '{ncnn_model_path}' not found.")
+        print(f"  Export the model on another machine:")
+        print(f"    pip install ultralytics")
+        print(f"    yolo export model=yolo11n.pt format=ncnn")
+        print(f"  Then copy the folder here:")
+        print(f"    scp -r yolo11n_ncnn_model/ pi@<pi-ip>:~/yolo_benchmark/")
+        sys.exit(1)
+
+    # Verify it has the expected files
+    ncnn_files = os.listdir(ncnn_model_path)
+    print(f"  Found NCNN model with files: {ncnn_files}")
 
     model_info = {
         "Model": "YOLO11n (nano)",
-        "Source format": "PyTorch (.pt)",
-        "Export format": EXPORT_FORMAT.upper(),
+        "Source format": "PyTorch (.pt) — exported on separate machine",
+        "Inference format": "NCNN",
         "Parameters": "~2.6M",
         "Task": "Object Detection",
+        "NCNN model path": ncnn_model_path,
     }
 
-    # Export to NCNN
-    ncnn_model_path = export_model(pt_model, EXPORT_FORMAT)
-    model_info["Exported path"] = str(ncnn_model_path)
-
-    # Free memory from PyTorch model
-    del model
+    # Verify model loads
+    from ultralytics import YOLO
+    test_model = YOLO(ncnn_model_path, task="detect")
+    del test_model
+    print("  Model loads successfully.")
 
     # ── Check images exist ─────────────────────────────────────────────
     if not os.path.isdir(IMAGE_DIR):
