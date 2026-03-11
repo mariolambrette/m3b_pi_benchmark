@@ -1,0 +1,554 @@
+{
+  "duration_hours": 1,
+  "samples": [
+    {
+      "timestamp": "2026-03-10T14:31:29.369566",
+      "elapsed_minutes": 0,
+      "cpu_temp_c": 59.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.1,
+      "cpu_percent": 100.0,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:32:29.372580",
+      "elapsed_minutes": 1.0,
+      "cpu_temp_c": 50.1,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.5,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:33:29.377854",
+      "elapsed_minutes": 2.0,
+      "cpu_temp_c": 49.2,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.3,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:34:29.383324",
+      "elapsed_minutes": 3.0,
+      "cpu_temp_c": 48.7,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.9,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:35:29.388440",
+      "elapsed_minutes": 4.0,
+      "cpu_temp_c": 47.2,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.4,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:36:29.393714",
+      "elapsed_minutes": 5.0,
+      "cpu_temp_c": 45.3,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:37:29.399615",
+      "elapsed_minutes": 6.0,
+      "cpu_temp_c": 45.3,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.7,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:38:29.404722",
+      "elapsed_minutes": 7.0,
+      "cpu_temp_c": 44.3,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:39:29.409752",
+      "elapsed_minutes": 8.0,
+      "cpu_temp_c": 44.3,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.8,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:40:29.414656",
+      "elapsed_minutes": 9.0,
+      "cpu_temp_c": 43.8,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.3,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:41:29.420477",
+      "elapsed_minutes": 10.0,
+      "cpu_temp_c": 42.8,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.8,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:42:29.425711",
+      "elapsed_minutes": 11.0,
+      "cpu_temp_c": 44.3,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3257.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:43:29.431769",
+      "elapsed_minutes": 12.0,
+      "cpu_temp_c": 42.8,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:44:29.439758",
+      "elapsed_minutes": 13.0,
+      "cpu_temp_c": 42.8,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.8,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:45:29.445003",
+      "elapsed_minutes": 14.0,
+      "cpu_temp_c": 42.8,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.9,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:46:29.451155",
+      "elapsed_minutes": 15.0,
+      "cpu_temp_c": 41.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.4,
+      "cpu_percent": 1.4,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:47:29.456922",
+      "elapsed_minutes": 16.0,
+      "cpu_temp_c": 40.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.8,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:48:29.463666",
+      "elapsed_minutes": 17.0,
+      "cpu_temp_c": 40.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.1,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:49:29.468255",
+      "elapsed_minutes": 18.0,
+      "cpu_temp_c": 40.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:50:29.472849",
+      "elapsed_minutes": 19.0,
+      "cpu_temp_c": 41.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.5,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:51:29.478205",
+      "elapsed_minutes": 20.0,
+      "cpu_temp_c": 40.4,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:52:29.483472",
+      "elapsed_minutes": 21.0,
+      "cpu_temp_c": 39.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.0,
+      "cpu_percent": 1.4,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:53:29.488637",
+      "elapsed_minutes": 22.0,
+      "cpu_temp_c": 40.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.4,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:54:29.493175",
+      "elapsed_minutes": 23.0,
+      "cpu_temp_c": 40.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:55:29.499707",
+      "elapsed_minutes": 24.0,
+      "cpu_temp_c": 39.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.5,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:56:29.504312",
+      "elapsed_minutes": 25.0,
+      "cpu_temp_c": 40.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:57:29.508937",
+      "elapsed_minutes": 26.0,
+      "cpu_temp_c": 40.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.6,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:58:29.527324",
+      "elapsed_minutes": 27.0,
+      "cpu_temp_c": 39.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.1,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T14:59:29.531692",
+      "elapsed_minutes": 28.0,
+      "cpu_temp_c": 39.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.2,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:00:29.535479",
+      "elapsed_minutes": 29.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.6,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:01:29.540029",
+      "elapsed_minutes": 30.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.8,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:02:29.545153",
+      "elapsed_minutes": 31.0,
+      "cpu_temp_c": 39.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3261.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:03:29.549706",
+      "elapsed_minutes": 32.0,
+      "cpu_temp_c": 38.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.6,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:04:29.554403",
+      "elapsed_minutes": 33.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3261.4,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:05:29.560792",
+      "elapsed_minutes": 34.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.0,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:06:29.565355",
+      "elapsed_minutes": 35.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.7,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:07:29.569918",
+      "elapsed_minutes": 36.0,
+      "cpu_temp_c": 38.9,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.3,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:08:29.574477",
+      "elapsed_minutes": 37.0,
+      "cpu_temp_c": 39.4,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.0,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:09:29.579008",
+      "elapsed_minutes": 38.0,
+      "cpu_temp_c": 38.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.6,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:10:29.583033",
+      "elapsed_minutes": 39.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.5,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:11:29.586852",
+      "elapsed_minutes": 40.0,
+      "cpu_temp_c": 38.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.7,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:12:29.591487",
+      "elapsed_minutes": 41.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.3,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:13:29.596059",
+      "elapsed_minutes": 42.0,
+      "cpu_temp_c": 38.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.1,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:14:29.600647",
+      "elapsed_minutes": 43.0,
+      "cpu_temp_c": 37.0,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.8,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:15:29.605845",
+      "elapsed_minutes": 44.0,
+      "cpu_temp_c": 38.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:16:29.611133",
+      "elapsed_minutes": 45.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.6,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:17:29.616323",
+      "elapsed_minutes": 46.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.5,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:18:29.621427",
+      "elapsed_minutes": 47.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:19:29.626474",
+      "elapsed_minutes": 48.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.4,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:20:29.630540",
+      "elapsed_minutes": 49.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3259.4,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:21:29.634671",
+      "elapsed_minutes": 50.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.9,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:22:29.639272",
+      "elapsed_minutes": 51.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3260.2,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:23:29.643879",
+      "elapsed_minutes": 52.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.1,
+      "ram_available_mb": 3259.7,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:24:29.649690",
+      "elapsed_minutes": 53.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.3,
+      "ram_available_mb": 3255.0,
+      "cpu_percent": 4.1,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:25:29.654937",
+      "elapsed_minutes": 54.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3256.1,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:26:29.660115",
+      "elapsed_minutes": 55.0,
+      "cpu_temp_c": 37.5,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3257.4,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:27:29.665338",
+      "elapsed_minutes": 56.0,
+      "cpu_temp_c": 38.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.0,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:28:29.670548",
+      "elapsed_minutes": 57.0,
+      "cpu_temp_c": 38.9,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.4,
+      "cpu_percent": 1.7,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:29:29.675717",
+      "elapsed_minutes": 58.0,
+      "cpu_temp_c": 38.5,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.8,
+      "cpu_percent": 1.6,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:30:29.680777",
+      "elapsed_minutes": 59.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.0,
+      "cpu_percent": 1.5,
+      "process_rss_mb": 195.9
+    },
+    {
+      "timestamp": "2026-03-10T15:31:29.685442",
+      "elapsed_minutes": 60.0,
+      "cpu_temp_c": 38.0,
+      "ram_used_percent": 14.2,
+      "ram_available_mb": 3258.4,
+      "cpu_percent": 1.4,
+      "process_rss_mb": 195.9
+    }
+  ]
+}
